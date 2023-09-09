@@ -1,10 +1,10 @@
-﻿var imie = "Ewa";
-var plec = "F";
-var wiek = 33;
+﻿var name = "Ewa";
+var gender = "F";
+var age = 33;
 
-if (plec == "F")
+if (gender == "F")
 {
-    if (wiek < 33)
+    if (age < 33)
     {
         Console.WriteLine("Kobieta poniżej 30 lat");
     }
@@ -16,7 +16,7 @@ if (plec == "F")
 }
 else
 {
-    if (wiek < 18)
+    if (age < 18)
     {
         Console.WriteLine("Niepełnoletni mężczyzna");
     }
