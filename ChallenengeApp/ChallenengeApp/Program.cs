@@ -1,8 +1,8 @@
-﻿var imie = "Maciej";
-var plec = "M";
-var wiek = 43;
+﻿var imie = "Ewa";
+var plec = "F";
+var wiek = 33;
 
-if (plec != "M")
+if (plec == "F")
 {
     if (wiek < 33)
     {
@@ -20,8 +20,5 @@ else
     {
         Console.WriteLine("Niepełnoletni mężczyzna");
     }
-    else
-    {
-        Console.WriteLine("Maciej, lat 43");
-    }
+    
 }
