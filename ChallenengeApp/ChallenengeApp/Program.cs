@@ -1,36 +1,25 @@
-﻿var name = "Ewa";
-var gender = "F";
-var age = 30;
+﻿int[] grades = new int[1];
+List<string> daysOfWeek = new List<string>();
+daysOfWeek.Add("poniedziałek");
+daysOfWeek.Add("wtorek");
+daysOfWeek.Add("środa");
+daysOfWeek.Add("czwartek");
+daysOfWeek.Add("piątek");
+daysOfWeek.Add("sobota");
+daysOfWeek.Add("niedziela");
 
-if (gender == "F")
+//Console.WriteLine(daysOfWeek[3]);
+
+List<string> months = new List<string>{ "styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień" };
+//Console.WriteLine(months[5]);
+
+foreach(string day in daysOfWeek)
 {
-
-    if (age < 30)
-    {
-        Console.WriteLine("Kobieta poniżej 30 lat");
-    }
-    else if (age >= 30 && age < 33 || age > 33)
-    {
-        Console.WriteLine("Kobieta powyżej 30 lat, niebędąca 33-letnią Ewą");
-    }
-    else
-    {
-        if (name == "Ewa")
-        {
-            Console.WriteLine("Ewa, lat 33");
-        }
-    }
-
+    Console.WriteLine(day);
 }
-else
+
+foreach (string month in months)
 {
-    if (age < 18)
-    {
-        Console.WriteLine("Niepełnoletni mężczyzna");
-    }
-    else
-    {
-        Console.WriteLine("Pełnoletni mężczyzna");
-    }
-
+    Console.WriteLine(month);
 }
+
