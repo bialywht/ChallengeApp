@@ -1,16 +1,20 @@
-﻿var name = "Ewa";
+﻿var name = "Teresa";
 var gender = "F";
-var age = 33;
+var age = 60;
 
 if (gender == "F")
 {
-    if (age < 33)
+    if (age == 33 && name == "Ewa")
+    {
+        Console.WriteLine("Ewa, lat 33");
+    }
+    else if (age < 30)
     {
         Console.WriteLine("Kobieta poniżej 30 lat");
     }
-    else
+    else if (age >= 30)
     {
-        Console.WriteLine("Ewa, lat 33");
+        Console.WriteLine("Kobieta powyżej 30 lat, ale nie Ewa");
     }
 
 }
@@ -20,5 +24,9 @@ else
     {
         Console.WriteLine("Niepełnoletni mężczyzna");
     }
-    
+    else
+    {
+        Console.WriteLine("Pełnoletni mężczyzna");
+    }
+
 }
