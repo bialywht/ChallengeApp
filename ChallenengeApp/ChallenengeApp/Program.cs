@@ -1,25 +1,75 @@
-﻿int[] grades = new int[1];
-List<string> daysOfWeek = new List<string>();
-daysOfWeek.Add("poniedziałek");
-daysOfWeek.Add("wtorek");
-daysOfWeek.Add("środa");
-daysOfWeek.Add("czwartek");
-daysOfWeek.Add("piątek");
-daysOfWeek.Add("sobota");
-daysOfWeek.Add("niedziela");
+﻿int number = 4566;
+string numberInString = number.ToString();
+char[] letters = numberInString.ToCharArray();
 
-//Console.WriteLine(daysOfWeek[3]);
+List<string> labels = new List<string>();
+labels.Add("0 => ");
+labels.Add("1 => ");
+labels.Add("2 => ");
+labels.Add("3 => ");
+labels.Add("4 => ");
+labels.Add("5 => ");
+labels.Add("6 => ");
+labels.Add("7 => ");
+labels.Add("8 => ");
+labels.Add("9 => ");
 
-List<string> months = new List<string>{ "styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień" };
-//Console.WriteLine(months[5]);
 
-foreach(string day in daysOfWeek)
+int[] numbers = new int[10];
+
+
+foreach (char c in letters)
 {
-    Console.WriteLine(day);
+    if (c == '0')
+    {
+        numbers[0] = numbers[0] + 1;
+    }
+    else if (c == '1') 
+    {
+        numbers[1] = numbers[1] + 1;
+    }
+    else if (c == '2')
+    {
+        numbers[2] = numbers[2] + 1;
+    }
+    else if(c == '3')
+    {
+        numbers[3] = numbers[3] + 1;
+    }
+    else if(c == '4')
+    {
+        numbers[4] = numbers[4] + 1;
+    }
+    else if (c == '5') 
+    {
+        numbers[5] = numbers[5] + 1;
+    }    
+    else if (c == '6')
+    {
+        numbers[6] = numbers[6] + 1;
+    }
+    else if (c == '7')
+    {
+        numbers[7] = numbers[7] + 1;
+    }
+    else if(c == '8')
+    {
+        numbers[8] = numbers[8] + 1;
+    }
+    else if(c == '9')
+    {
+        numbers[9] = numbers[9] + 1;
+    }
 }
 
-foreach (string month in months)
+
+Console.Write("Wyniki dla liczby: ");
+Console.WriteLine(number);
+
+for(int i = 0; i < numbers.Length; i++)
 {
-    Console.WriteLine(month);
+    Console.Write(labels[i]);
+    Console.WriteLine(numbers[i]);
 }
+
 
