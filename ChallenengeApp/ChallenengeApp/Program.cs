@@ -22,25 +22,31 @@ employee3.AddGrade(2);
 employee3.AddGrade(1);
 employee3.AddGrade(3);
 
+List<Employee> employees = new List<Employee>() { employee1, employee2, employee3};
+int bestResult = -1;
+Employee bestResultEmployee = null;
 
-Console.WriteLine(employee1.FirstName + " " + employee1.LastName + " - " + employee1.BestResult);
-Console.WriteLine(employee2.FirstName + " " + employee2.LastName + " - " + employee2.BestResult);
-Console.WriteLine(employee3.FirstName + " " + employee3.LastName + " - " + employee3.BestResult);
+foreach (Employee employee in employees)
+{
+    Console.WriteLine(employee.FirstName + " " + employee.LastName + " - " + employee.BestResult);
+    if (employee.BestResult > bestResult)
+    {
+        
+        bestResult = employee.BestResult;
+        bestResultEmployee = employee;
+        
+    }
 
 
-if ((employee1.BestResult > employee2.BestResult) && (employee1.BestResult > employee3.BestResult))
-{
-    Console.WriteLine("Pracownik z najwyższą liczbą ocen (" + employee1.BestResult + ") to " + employee1.FirstName + " " + employee1.LastName + ".");
+
+
+   // Console.WriteLine(employee1.FirstName + " " + employee1.LastName + " - " + employee1.BestResult);
+    //Console.WriteLine(employee2.FirstName + " " + employee2.LastName + " - " + employee2.BestResult);
+   // Console.WriteLine(employee3.FirstName + " " + employee3.LastName + " - " + employee3.BestResult);
+
+
+
+    
 }
-else if ((employee1.BestResult > employee2.BestResult) && (employee1.BestResult < employee3.BestResult))
-{
-    Console.WriteLine("Pracownik z najwyższą liczbą ocen (" + employee3.BestResult + ") to " + employee3.FirstName + " " + employee3.LastName + ".");
-}
-else if ((employee1.BestResult < employee2.BestResult) && (employee2.BestResult > employee3.BestResult))
-{
-    Console.WriteLine("Pracownik z najwyższą liczbą ocen (" + employee2.BestResult + ") to " + employee2.FirstName + " " + employee2.LastName + ".");
-}
-else
-{
-    Console.WriteLine("Inne przypadki, w których nie ma jednego pracownika z najwyższą liczbą ocen.");
-}
+
+Console.WriteLine("Pracownik z najwyższą liczbą ocen (" + bestResultEmployee.BestResult + ") to " + bestResultEmployee.FirstName + " " + bestResultEmployee.LastName + ".");
