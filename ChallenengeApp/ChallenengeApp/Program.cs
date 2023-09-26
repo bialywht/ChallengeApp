@@ -7,7 +7,7 @@ Employee employee2 = new Employee("Remigiusz", "Butkiewicz", "42");
 Employee employee3 = new Employee("Edyta", "Grzywacz", "35");
 
 employee1.AddGrade(8);
-employee1.AddGrade(7);
+employee1.AddGrade(6);
 employee1.AddGrade(9);
 employee1.AddGrade(6);
 employee1.AddGrade(3);
@@ -37,12 +37,6 @@ foreach (Employee employee in employees)
         
     }
 
-
-
-
-   // Console.WriteLine(employee1.FirstName + " " + employee1.LastName + " - " + employee1.BestResult);
-    //Console.WriteLine(employee2.FirstName + " " + employee2.LastName + " - " + employee2.BestResult);
-   // Console.WriteLine(employee3.FirstName + " " + employee3.LastName + " - " + employee3.BestResult);
 
 
 

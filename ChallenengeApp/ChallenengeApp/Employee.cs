@@ -1,6 +1,6 @@
 ﻿namespace ChallengeApp
 {
-    class Employee
+    public class Employee
     {
         private List<int> grades = new List<int>();
 
@@ -19,6 +19,7 @@
         public void AddGrade(int grade)
         {
             grades.Add(grade);
+            
         }
 
         public Employee(string firstName, string lastName, string age)
@@ -29,7 +30,5 @@
         }
 
         
-
-
     }
 }
