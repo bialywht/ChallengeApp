@@ -1,75 +1,46 @@
-﻿int number = 4566;
-string numberInString = number.ToString();
-char[] letters = numberInString.ToCharArray();
+﻿
 
-List<string> labels = new List<string>();
-labels.Add("0 => ");
-labels.Add("1 => ");
-labels.Add("2 => ");
-labels.Add("3 => ");
-labels.Add("4 => ");
-labels.Add("5 => ");
-labels.Add("6 => ");
-labels.Add("7 => ");
-labels.Add("8 => ");
-labels.Add("9 => ");
+using ChallengeApp;
+
+Employee employee1 = new Employee("Jędrzej", "Czura", "57");
+Employee employee2 = new Employee("Remigiusz", "Butkiewicz", "42");
+Employee employee3 = new Employee("Edyta", "Grzywacz", "35");
+
+employee1.AddGrade(8);
+employee1.AddGrade(7);
+employee1.AddGrade(9);
+employee1.AddGrade(6);
+employee1.AddGrade(3);
+employee2.AddGrade(5);
+employee2.AddGrade(1);
+employee2.AddGrade(10);
+employee2.AddGrade(8);
+employee2.AddGrade(9);
+employee3.AddGrade(9);
+employee3.AddGrade(8);
+employee3.AddGrade(2);
+employee3.AddGrade(1);
+employee3.AddGrade(3);
 
 
-int[] numbers = new int[10];
+Console.WriteLine(employee1.FirstName + " " + employee1.LastName + " - " + employee1.BestResult);
+Console.WriteLine(employee2.FirstName + " " + employee2.LastName + " - " + employee2.BestResult);
+Console.WriteLine(employee3.FirstName + " " + employee3.LastName + " - " + employee3.BestResult);
 
 
-foreach (char c in letters)
+if ((employee1.BestResult > employee2.BestResult) && (employee1.BestResult > employee3.BestResult))
 {
-    if (c == '0')
-    {
-        numbers[0] = numbers[0] + 1;
-    }
-    else if (c == '1') 
-    {
-        numbers[1] = numbers[1] + 1;
-    }
-    else if (c == '2')
-    {
-        numbers[2] = numbers[2] + 1;
-    }
-    else if(c == '3')
-    {
-        numbers[3] = numbers[3] + 1;
-    }
-    else if(c == '4')
-    {
-        numbers[4] = numbers[4] + 1;
-    }
-    else if (c == '5') 
-    {
-        numbers[5] = numbers[5] + 1;
-    }    
-    else if (c == '6')
-    {
-        numbers[6] = numbers[6] + 1;
-    }
-    else if (c == '7')
-    {
-        numbers[7] = numbers[7] + 1;
-    }
-    else if(c == '8')
-    {
-        numbers[8] = numbers[8] + 1;
-    }
-    else if(c == '9')
-    {
-        numbers[9] = numbers[9] + 1;
-    }
+    Console.WriteLine("Pracownik z najwyższą liczbą ocen (" + employee1.BestResult + ") to " + employee1.FirstName + " " + employee1.LastName + ".");
 }
-
-
-Console.Write("Wyniki dla liczby: ");
-Console.WriteLine(number);
-
-for(int i = 0; i < numbers.Length; i++)
+else if ((employee1.BestResult > employee2.BestResult) && (employee1.BestResult < employee3.BestResult))
 {
-    Console.Write(labels[i]);
-    Console.WriteLine(numbers[i]);
+    Console.WriteLine("Pracownik z najwyższą liczbą ocen (" + employee3.BestResult + ") to " + employee3.FirstName + " " + employee3.LastName + ".");
 }
-
-
+else if ((employee1.BestResult < employee2.BestResult) && (employee2.BestResult > employee3.BestResult))
+{
+    Console.WriteLine("Pracownik z najwyższą liczbą ocen (" + employee2.BestResult + ") to " + employee2.FirstName + " " + employee2.LastName + ".");
+}
+else
+{
+    Console.WriteLine("Inne przypadki, w których nie ma jednego pracownika z najwyższą liczbą ocen.");
+}
