@@ -36,11 +36,7 @@ foreach (Employee employee in employees)
         bestResultEmployee = employee;
         
     }
-
-
-
-
-    
+      
 }
 
 Console.WriteLine("Pracownik z najwyższą liczbą ocen (" + bestResultEmployee.BestResult + ") to " + bestResultEmployee.FirstName + " " + bestResultEmployee.LastName + ".");

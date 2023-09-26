@@ -22,6 +22,11 @@
             
         }
 
+        public Employee(string firstName)
+        {
+            this.FirstName = firstName;
+        }
+
         public Employee(string firstName, string lastName, string age)
         {
             this.FirstName = firstName;
