@@ -12,7 +12,7 @@ namespace ChallengeApp.Tests
         {
             //arrange
 
-            var employee = new Employee("Zygfryd", "Potocki", "103");
+            var employee = new Employee("Zygfryd", "Potocki");
             employee.AddGrade(5);
             employee.AddGrade(8);
             employee.AddGrade(-2);
