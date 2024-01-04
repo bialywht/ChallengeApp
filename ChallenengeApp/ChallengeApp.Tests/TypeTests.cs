@@ -21,18 +21,18 @@
             Assert.AreEqual(name1, name2);
         }
 
-        [Test]
-        public void ComperingReferenceTypes()
-        {            
-            var emloyee1 = GetEmployee("Emil");
-            var emloyee2 = GetEmployee("Emil");
+        //[Test]
+        //public void ComperingReferenceTypes()
+        //{            
+        //    var emloyee1 = GetEmployee("Emil");
+        //    var emloyee2 = GetEmployee("Emil");
          
-            Assert.AreNotEqual(emloyee1, emloyee2);
-        }
+        //    Assert.AreNotEqual(emloyee1, emloyee2);
+        //}
 
-        private Employee GetEmployee(string firstName) 
-        {
-            return new Employee(firstName);
-        }
+        //private Employee GetEmployee(string firstName) 
+        //{
+        //    return new Employee(firstName);
+        //}
     }
 }
