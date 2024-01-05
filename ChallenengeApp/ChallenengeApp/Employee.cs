@@ -18,8 +18,43 @@
 
         public void AddGrade(float grade)
         {
-            this.grades.Add(grade);
             
+
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine("Ocena musi być od 0 - 100");
+            }
+        }
+
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {                            
+                this.AddGrade(result);
+            }
+            else
+            {
+                Console.WriteLine($"({grade}) nie jest oceną");
+            }
+        }
+
+        public void AddGrade(long grade)
+        {            
+                this.AddGrade((float)grade);            
+        }
+
+        public void AddGrade(double grade)
+        {
+            this.AddGrade((float)grade);
+        }
+
+        public void AddGrade(decimal grade)
+        {
+            this.AddGrade((float)grade);
         }
 
         public Employee(string firstName)

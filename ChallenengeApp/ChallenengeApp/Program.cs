@@ -9,7 +9,7 @@ Employee employee1 = new Employee("Jędrzej", "Czura");
 employee1.AddGrade(8);
 employee1.AddGrade(6);
 employee1.AddGrade(9);
-employee1.AddGrade(6);
+employee1.AddGrade("1");
 employee1.AddGrade(3);
 //employee2.AddGrade(5);
 //employee2.AddGrade(1);
