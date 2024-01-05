@@ -24,7 +24,7 @@ employee1.AddGrade(3);
 
 
 
-List<Employee> employees = new List<Employee>() { employee1};
+List<Employee> employees = new List<Employee>() {employee1};
 int bestResult = -1;
 Employee bestResultEmployee = null;
 
@@ -33,7 +33,7 @@ foreach (Employee employee in employees)
     var statistics = employee.GetStatistics();
     Console.WriteLine($"Maksymalna ocena {statistics.Max}");
     Console.WriteLine($"Minimalna ocena {statistics.Min}");
-    Console.WriteLine($"Średnia ocena {statistics.Avarage:N2}");
+    Console.WriteLine($"Średnia ocena {statistics.Average:N2}");
     Console.WriteLine($"{employee.FirstName} {employee.LastName} {employee.BestResult}");
     if (employee.BestResult > bestResult)
     {

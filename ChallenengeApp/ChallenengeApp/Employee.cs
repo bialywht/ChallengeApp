@@ -22,6 +22,11 @@
             
         }
 
+        public Employee(string firstName)
+        {
+            this.FirstName = firstName;
+        }
+
       
         public Employee(string firstName, string lastName)
         {
@@ -35,7 +40,7 @@
             var statistics = new Statistics();
             statistics.Max = grades.Max();
             statistics.Min = grades.Min();
-            statistics.Avarage = grades.Average();
+            statistics.Average = grades.Average();
             return statistics;
         }
 
