@@ -57,6 +57,36 @@
             this.AddGrade((float)grade);
         }
 
+        public void AddGrade(char grade)
+        {
+            switch (grade)
+            {
+                case 'A':
+                case 'a':
+                    this.AddGrade(100);
+                    break;
+                case 'B':
+                    this.AddGrade(80);
+                    break;
+                case 'C':
+                    this.AddGrade(60);
+                    break;
+                case 'D':
+                    this.AddGrade(40);
+                    break;
+                case 'E':
+                    this.AddGrade(20);
+                    break;
+                default:
+                    Console.WriteLine("Wybierz A-E");
+                    break;
+            }
+        }
+
+        public Employee()
+        {
+
+        }
         public Employee(string firstName)
         {
             this.FirstName = firstName;
@@ -76,6 +106,26 @@
             statistics.Max = grades.Max();
             statistics.Min = grades.Min();
             statistics.Average = grades.Average();
+
+            switch (statistics.Average)
+            {
+                case var average when average >= 80:
+                    statistics.AverageLetter = 'A';
+                    break;
+                case var average when average >= 60:
+                    statistics.AverageLetter = 'B';
+                    break;
+                case var average when average >= 40:
+                    statistics.AverageLetter = 'C';
+                    break;
+                case var average when average >= 20:
+                    statistics.AverageLetter = 'D';
+                    break;
+                default:
+                    statistics.AverageLetter = 'E';
+                    break;
+            }
+
             return statistics;
         }
 

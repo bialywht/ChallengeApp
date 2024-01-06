@@ -8,28 +8,59 @@ namespace ChallengeApp.Tests
        
 
         [Test]
-        public void CheckingCollectingOfEmployeeGrades()
+        public void CheckingStatisticsMinValue()
         {
-            //arrange
-
-            var employee = new Employee("Zygfryd", "Potocki");
-            employee.AddGrade(5);
-            employee.AddGrade(8);
-            employee.AddGrade(-2);
-            employee.AddGrade(4);
-            employee.AddGrade(-1);
-            employee.AddGrade(6);
-
-            //act
-            var result = employee.BestResult;
+            Employee employee = new Employee();
+            employee.AddGrade(56);
+            employee.AddGrade(100);
+            employee.AddGrade(22);
+            employee.AddGrade(41);
+            var statistics = employee.GetStatistics();
 
 
+            Assert.AreEqual(22, statistics.Min);
+        }
 
-           //assert
-           Assert.AreEqual(20, result);
+        [Test]
+        public void CheckingStatisticsMaxValue()
+        {
+            Employee employee = new Employee();
+            employee.AddGrade(56);
+            employee.AddGrade(100);
+            employee.AddGrade(22);
+            employee.AddGrade(41);
+            var statistics = employee.GetStatistics();
 
 
+            Assert.AreEqual(100, statistics.Max);
+        }
 
+        [Test]
+        public void CheckingStatisticsAverage()
+        {
+            Employee employee = new Employee();
+            employee.AddGrade(56);
+            employee.AddGrade(100);
+            employee.AddGrade(22);
+            employee.AddGrade(41);
+            var statistics = employee.GetStatistics();
+
+
+            Assert.AreEqual(Math.Round(54.75, 2), Math.Round(statistics.Average, 2));
+        }
+
+        [Test]
+        public void CheckingStatisticsAverageLetter()
+        {
+            Employee employee = new Employee();
+            employee.AddGrade(56);
+            employee.AddGrade(100);
+            employee.AddGrade(22);
+            employee.AddGrade(41);
+            var statistics = employee.GetStatistics();
+
+
+            Assert.AreEqual('C', statistics.AverageLetter);
         }
     }
 }
