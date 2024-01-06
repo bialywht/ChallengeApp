@@ -17,6 +17,23 @@
             }
         }
 
+        public Employee()
+        {
+
+        }
+        public Employee(string firstName)
+        {
+            this.FirstName = firstName;
+        }
+
+
+        public Employee(string firstName, string lastName)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+
+        }
+
         public void AddGrade(float grade)
         {
             
@@ -79,25 +96,6 @@
         public void AddGrade(decimal grade)
         {
             this.AddGrade((float)grade);
-        }
-
-        
-
-        public Employee()
-        {
-
-        }
-        public Employee(string firstName)
-        {
-            this.FirstName = firstName;
-        }
-
-      
-        public Employee(string firstName, string lastName)
-        {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            
         }
 
         public Statistics GetStatistics() 
