@@ -19,13 +19,24 @@ var input = "";
 while(true)
 {
     Console.Write("Podaj ocenę pracownika (0-100): ");
-    input = Console.ReadLine();       
+    input = Console.ReadLine();
 
     if (input == "Z")
     {
         break;
     }
-    employee1.AddGrade(input);
+
+    try
+    {
+        employee1.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Exception catched: {e.Message}");
+    }
+
+
+
 }
 
 var statistics = employee1.GetStatistics();
@@ -38,18 +49,5 @@ Console.WriteLine($"Średnia litera: {statistics.AverageLetter}");
 
 
 
-//List<Employee> employees = new List<Employee>() {employee1};
-//int bestResult = -1;
-//Employee bestResultEmployee = null;
 
-
-//var statistics = employee1.GetStatistics();
-//Console.WriteLine($"Maksymalna ocena {statistics.Max}");
-//Console.WriteLine($"Minimalna ocena {statistics.Min}");
-//Console.WriteLine($"Średnia ocena {statistics.Average:N2}");
-//Console.WriteLine($"Średnia litera {statistics.AverageLetter}");
-//Console.WriteLine($"{employee1.FirstName} {employee1.LastName} {employee1.BestResult}");
-
-
-//Console.WriteLine($"Pracownik z najwyższą liczbą ocen ({bestResultEmployee.BestResult}) to {bestResultEmployee.FirstName} {bestResultEmployee.LastName}.");
 

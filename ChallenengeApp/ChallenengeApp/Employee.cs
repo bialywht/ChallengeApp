@@ -2,6 +2,7 @@
 {
     public class Employee
     {
+        private readonly char gender ='M';
         private List<float> grades = new List<float>();
 
         public string FirstName { get; private set; }
@@ -19,42 +20,14 @@
         public void AddGrade(float grade)
         {
             
-
             if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
             }
             else
             {
-                Console.WriteLine("Ocena musi być od 0 - 100");
+                throw new Exception("Ocena musi być od 0 - 100");               
             }
-        }
-
-        public void AddGrade(string grade)
-        {
-            if (float.TryParse(grade, out float result))
-            {                            
-                this.AddGrade(result);
-            }
-            else
-            {
-                Console.WriteLine($"({grade}) nie jest oceną");
-            }
-        }
-
-        public void AddGrade(long grade)
-        {            
-                this.AddGrade((float)grade);            
-        }
-
-        public void AddGrade(double grade)
-        {
-            this.AddGrade((float)grade);
-        }
-
-        public void AddGrade(decimal grade)
-        {
-            this.AddGrade((float)grade);
         }
 
         public void AddGrade(char grade)
@@ -78,10 +51,37 @@
                     this.AddGrade(20);
                     break;
                 default:
-                    Console.WriteLine("Wybierz A-E");
-                    break;
+                    throw new Exception("Wybierz A-E");
             }
         }
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {                            
+                this.AddGrade(result);
+            }
+            else
+            {
+                throw new Exception($"({grade}) nie jest oceną");                
+            }
+        }
+
+        public void AddGrade(long grade)
+        {            
+                this.AddGrade((float)grade);            
+        }
+
+        public void AddGrade(double grade)
+        {
+            this.AddGrade((float)grade);
+        }
+
+        public void AddGrade(decimal grade)
+        {
+            this.AddGrade((float)grade);
+        }
+
+        
 
         public Employee()
         {
