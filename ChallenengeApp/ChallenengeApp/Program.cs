@@ -1,4 +1,5 @@
 ﻿using ChallengeApp;
+using System.Runtime.CompilerServices;
 
 
 
@@ -28,6 +29,8 @@ while(true)
     try
     {
         employee1.AddGrade(input);
+        var addedGrade = employee1.grades.Last();
+        Console.WriteLine(addedGrade.ToString());
     }
     catch (Exception e)
     {
