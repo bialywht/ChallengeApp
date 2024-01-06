@@ -15,7 +15,6 @@ Employee employee1 = new Employee();
 var input = "";
 
 
-
 while(true)
 {
     Console.Write("Podaj ocenę pracownika (0-100): ");
