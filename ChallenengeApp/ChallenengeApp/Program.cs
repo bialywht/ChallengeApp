@@ -12,34 +12,38 @@ Console.WriteLine("|                                   |");
 Console.WriteLine("=====================================");
 
 
-Employee employee1 = new Employee();
+EmployeeInFile employee1 = new EmployeeInFile();
 var input = "";
 
-
-while(true)
-{
-    Console.Write("Podaj ocenę pracownika (0-100): ");
-    input = Console.ReadLine();
-
-    if (input == "Z")
-    {
-        break;
-    }
-
-    try
-    {
-        employee1.AddGrade(input);
-        var addedGrade = employee1.grades.Last();
-        Console.WriteLine(addedGrade.ToString());
-    }
-    catch (Exception e)
-    {
-        Console.WriteLine($"Exception catched: {e.Message}");
-    }
+employee1.AddGrade("B");
 
 
+//while (true)
+//{
+//    Console.Write("Podaj ocenę pracownika (0-100): ");
+//    input = Console.ReadLine();
 
-}
+//    if (input == "Z")
+//    {
+//        break;
+//    }
+
+//    try
+//    {
+//        employee1.AddGrade(input);
+
+//        //var addedGrade = employee1.AddGrade(input);
+
+//        //Console.WriteLine(addedGrade.ToString());
+//    }
+//    catch (Exception e)
+//    {
+//        Console.WriteLine($"Exception catched: {e.Message}");
+//    }
+
+
+
+//}
 
 var statistics = employee1.GetStatistics();
 Console.WriteLine($"Min: {statistics.Min}");
