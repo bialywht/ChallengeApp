@@ -2,12 +2,22 @@
 {
     public class EmployeeInMemory : EmployeeBase
     {
+        public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+        public event GradeAddedDelegate GradeAdded;
+
         public EmployeeInMemory()
         {
+            
+
         }
+        
+             
+
 
         public EmployeeInMemory(string firstName) : base(firstName)
-        {
+        {       
+            
         }
 
         public EmployeeInMemory(string firstName, string lastName) : base(firstName, lastName)
@@ -25,6 +35,10 @@
             if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
@@ -86,24 +100,76 @@
             }
         }
 
+        
         public override void AddGrade(long grade)
         {
-            this.AddGrade((float)grade);
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add((float)grade);
+
+               
+
+            }
+            else
+            {
+                throw new Exception("Ocena musi być od 0 - 100");
+            }
         }
 
         public override void AddGrade(double grade)
         {
-            this.AddGrade((float)grade);
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add((float)grade);
+            }
+            else
+            {
+                throw new Exception("Ocena musi być od 0 - 100");
+            }
         }
 
         public override void AddGrade(decimal grade)
         {
-            this.AddGrade((float)grade);
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add((float)grade);
+            }
+            else
+            {
+                throw new Exception("Ocena musi być od 0 - 100");
+            }
         }
+
+
 
         public override Statistics GetStatistics()
         {
-            throw new NotImplementedException();
+            var statistics = new Statistics();
+            statistics.Max = grades.Max();
+            statistics.Min = grades.Min();
+            statistics.Average = grades.Average();
+
+            switch (statistics.Average)
+            {
+                case var average when average >= 80:
+                    statistics.AverageLetter = 'A';
+                    break;
+                case var average when average >= 60:
+                    statistics.AverageLetter = 'B';
+                    break;
+                case var average when average >= 40:
+                    statistics.AverageLetter = 'C';
+                    break;
+                case var average when average >= 20:
+                    statistics.AverageLetter = 'D';
+                    break;
+                default:
+                    statistics.AverageLetter = 'E';
+                    break;
+            }
+
+            return statistics;
         }
+    
     }
 }

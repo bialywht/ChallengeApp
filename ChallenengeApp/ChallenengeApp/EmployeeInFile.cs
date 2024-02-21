@@ -126,26 +126,51 @@
 
         public override void AddGrade(long grade)
         {
-            using (var writer = File.AppendText(fileName))
+            if (grade >= 0 && grade <= 100)
             {
-                writer.WriteLine((float)grade);
+                using (var writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine((float)grade);
+                }
             }
+            else
+            {
+                throw new Exception("Ocena musi być od 0 - 100");
+            }
+           
+            
         }
 
         public override void AddGrade(double grade)
         {
-            using (var writer = File.AppendText(fileName))
+            if (grade >= 0 && grade <= 100)
             {
-                writer.WriteLine((float)grade);
+                using (var writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine((float)grade);
+                }
             }
+            else
+            {
+                throw new Exception("Ocena musi być od 0 - 100");
+            }
+           
         }
 
         public override void AddGrade(decimal grade)
         {
-            using (var writer = File.AppendText(fileName))
+            if (grade >= 0 && grade <= 100)
             {
-                writer.WriteLine((float)grade);
+                using (var writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine((float)grade);
+                }
             }
+            else
+            {
+                throw new Exception("Ocena musi być od 0 - 100");
+            }
+           
         }
 
         

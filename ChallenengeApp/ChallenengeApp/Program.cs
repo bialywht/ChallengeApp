@@ -12,16 +12,25 @@ Console.WriteLine("|                                   |");
 Console.WriteLine("=====================================");
 
 
-EmployeeInFile employee1 = new EmployeeInFile();
-var input = "";
+//EmployeeInFile employee1 = new EmployeeInFile();
+EmployeeInMemory employee = new EmployeeInMemory();
+employee.GradeAdded += EmployeeGradeAdded;
+employee.GradeAdded += EmployeeGradeAdded;
 
-employee1.AddGrade("B");
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano ocenę");
+}
+
+employee.AddGrade('a');
+
+
 
 
 //while (true)
 //{
 //    Console.Write("Podaj ocenę pracownika (0-100): ");
-//    input = Console.ReadLine();
+//    var input = Console.ReadLine();
 
 //    if (input == "Z")
 //    {
@@ -30,11 +39,8 @@ employee1.AddGrade("B");
 
 //    try
 //    {
-//        employee1.AddGrade(input);
+//        employee2.AddGrade(input);
 
-//        //var addedGrade = employee1.AddGrade(input);
-
-//        //Console.WriteLine(addedGrade.ToString());
 //    }
 //    catch (Exception e)
 //    {
@@ -45,11 +51,11 @@ employee1.AddGrade("B");
 
 //}
 
-var statistics = employee1.GetStatistics();
-Console.WriteLine($"Min: {statistics.Min}");
-Console.WriteLine($"Max: {statistics.Max}");
-Console.WriteLine($"Srednia: {statistics.Average}");
-Console.WriteLine($"Średnia litera: {statistics.AverageLetter}");
+//var statistics = employee2.GetStatistics();
+//Console.WriteLine($"Min: {statistics.Min}");
+//Console.WriteLine($"Max: {statistics.Max}");
+//Console.WriteLine($"Srednia: {statistics.Average}");
+//Console.WriteLine($"Średnia litera: {statistics.AverageLetter}");
 
 
 
